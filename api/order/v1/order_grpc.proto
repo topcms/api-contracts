@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api.order.v1;
+
+import "google/api/annotations.proto";
+import "api/order/v1/order.proto";
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/order/v1;v1";
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {
+    option (google.api.http) = {
+      post: "/v1/orders"
+      body: "*"
+    };
+  }
+}

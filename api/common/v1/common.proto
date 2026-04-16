@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api.common.v1;
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/common/v1;v1";
+
+// Reply 为跨服务统一的通用响应包装（业务数据外层的 code/message）。
+message Reply {
+  int32 code = 1;
+  string message = 2;
+}
+
+// PageRequest 为分页查询的标准请求片段。
+message PageRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+// Metadata 用于 trace id 等调用链元数据透传。
+message Metadata {
+  string trace_id = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api.user.v1;
+
+import "google/api/annotations.proto";
+import "api/user/v1/user.proto";
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/user/v1;v1";
+
+// UserService 用户领域 gRPC / HTTP 接口（HTTP 映射见各 rpc 的 google.api.http）。
+service UserService {
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {
+    option (google.api.http) = {
+      get: "/v1/users/{id}"
+    };
+  }
+}

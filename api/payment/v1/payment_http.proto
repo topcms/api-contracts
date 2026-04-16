@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package api.payment.v1;
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/payment/v1;v1";
+
+// HTTP 映射见 payment_grpc.proto；本文件占位以保持三层文件结构。
+message PaymentHttpBindingNote {
+  string note = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package api.user.v1;
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/user/v1;v1";
+
+// 本文件用于与参考脚手架「message / gRPC / HTTP」分层约定对齐。
+// 实际 HTTP 路由与绑定在 user_grpc.proto 各 rpc 的 (google.api.http) 中维护。
+message UserHttpBindingNote {
+  string note = 1;
+}

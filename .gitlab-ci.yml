@@ -1,0 +1,13 @@
+stages:
+  - lint
+  - breaking
+
+lint:
+  stage: lint
+  script:
+    - buf lint
+
+breaking:
+  stage: breaking
+  script:
+    - buf breaking --against '.git#branch=main'

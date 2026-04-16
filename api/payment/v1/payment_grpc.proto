@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api.payment.v1;
+
+import "google/api/annotations.proto";
+import "api/payment/v1/payment.proto";
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/payment/v1;v1";
+
+service PaymentService {
+  rpc Pay(PayRequest) returns (PayResponse) {
+    option (google.api.http) = {
+      post: "/v1/payments/pay"
+      body: "*"
+    };
+  }
+}

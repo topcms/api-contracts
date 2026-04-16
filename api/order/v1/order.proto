@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package api.order.v1;
+
+import "api/common/v1/common.proto";
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/order/v1;v1";
+
+message Order {
+  int64 id = 1;
+  int64 user_id = 2;
+  string status = 3;
+}
+
+message CreateOrderRequest {
+  api.common.v1.Metadata metadata = 1;
+  int64 user_id = 2;
+}
+
+message CreateOrderResponse {
+  api.common.v1.Reply meta = 1;
+  Order order = 2;
+}

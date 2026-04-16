@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package api.payment.v1;
+
+import "api/common/v1/common.proto";
+
+option go_package = "github.com/topcms/api-contracts/gen/go/api/payment/v1;v1";
+
+message PayRequest {
+  api.common.v1.Metadata metadata = 1;
+  int64 order_id = 2;
+  string channel = 3;
+}
+
+message PayResponse {
+  api.common.v1.Reply meta = 1;
+  string transaction_id = 2;
+}
